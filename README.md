@@ -30,15 +30,11 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 
 # Repo setup
 
-## ⭐️ Sponsor: Add code to this repo
+## ⭐️ Sponsor: Repo checklist
 
-- [ ] Create a PR to this repo with the below changes:
 - [ ] Confirm that this repo is a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
 - [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
 - [ ] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
-## ⭐️ Sponsor: Repo checklist
-
 - [ ] Modify the [Overview](#overview) section of this `README.md` file. Describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the auditors should keep in mind when reviewing. (Here are two well-constructed examples: [Ajna Protocol](https://github.com/code-423n4/2023-05-ajna) and [Maia DAO Ecosystem](https://github.com/code-423n4/2023-05-maia))
 - [ ] Review the Gas award pool amount, if applicable. This can be adjusted up or down, based on your preference - just flag it for Code4rena staff so we can update the pool totals across all comms channels.
 - [ ] Optional: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
@@ -54,16 +50,12 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 ---
 
 # Kleidi audit details
-- Total Prize Pool: $40000 in USDC
-  - HM awards: $31780 in USDC
-  - (remove this line if there is no Analysis pool) Analysis awards: XXX XXX USDC (Notion: Analysis pool)
-  - QA awards: $1320 in USDC
-  - (remove this line if there is no Bot race) Bot Race awards: XXX XXX USDC (Notion: Bot Race pool)
- 
-  - Judge awards: $3800 in USDC
-  - Validator awards: XXX XXX USDC (Notion: Triage fee - final)
+- Total Prize Pool: $40,000 in USDC
+  - HM awards: $3,1780 in USDC
+  - QA awards: $1,320 in USDC
+  - Judge awards: $3,800 in USDC
+  - Validator awards: $2,600 in USDC
   - Scout awards: $500 in USDC
-  - (this line can be removed if there is no mitigation) Mitigation Review: XXX XXX USDC (*Opportunity goes to top 3 backstage wardens based on placement in this audit who RSVP.*)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts October 14, 2024 20:00 UTC
 - Ends October 24, 2024 20:00 UTC
@@ -72,9 +64,9 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 
 The 4naly3er report can be found [here](https://github.com/code-423n4/2024-10-kleidi/blob/main/4naly3er-report.md).
 
-
-
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
+
+
 ## 🐺 C4: Begin Gist paste here (and delete this line)
 
 
@@ -101,7 +93,7 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 | /src/RecoverySpell.sol | 1| **** | 144 | |@openzeppelin-contracts/contracts/utils/cryptography/EIP712.sol<br>@openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol<br>@safe/common/Enum.sol<br>@safe/Safe.sol<br>@interface/IMulticall3.sol<br>@safe/base/OwnerManager.sol<br>@safe/base/ModuleManager.sol|
 | /src/RecoverySpellFactory.sol | 1| **** | 56 | |@src/RecoverySpell.sol<br>src/utils/Create2Helper.sol|
 | /src/deploy/SystemDeploy.s.sol | 1| **** | 113 | |@forge-proposal-simulator/src/proposals/MultisigProposal.sol<br>@forge-proposal-simulator/addresses/Addresses.sol<br>src/Guard.sol<br>src/Timelock.sol<br>src/TimelockFactory.sol<br>src/InstanceDeployer.sol<br>src/views/AddressCalculation.sol<br>src/RecoverySpellFactory.sol|
-| /src/BytesHelper.sol | 1| **** | 33 | ||
+| /src/BytesHelper.sol | 1| **** | 33 | | Function `getFirstWord` is **out of scope** in this file. |
 | **Totals** | **10** | **** | **1393** | | |
 
 ### Files out of scope
