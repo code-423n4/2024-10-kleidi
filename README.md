@@ -51,7 +51,7 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 
 # Kleidi audit details
 - Total Prize Pool: $40,000 in USDC
-  - HM awards: $3,1780 in USDC
+  - HM awards: $31,780 in USDC
   - QA awards: $1,320 in USDC
   - Judge awards: $3,800 in USDC
   - Validator awards: $2,600 in USDC
