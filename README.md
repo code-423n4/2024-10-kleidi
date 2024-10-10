@@ -67,9 +67,223 @@ The 4naly3er report can be found [here](https://github.com/code-423n4/2024-10-kl
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
 
-## 🐺 C4: Begin Gist paste here (and delete this line)
+## 🐺 C4 team: paste this into the bottom of the sponsor's audit repo `README`, then delete this line
+
+The following are known issues with the Kleidi system:
+
+if the cold signers are malicious or compromised, they can execute transactions to compromise the system if neither recovery spells or the guardian are used
+if the hot signers are malicious or compromised, they can deploy a compromised system instance on a new chain with compromised recovery spells and malicious calldata checks that allow funds to be stolen
+if DEX's are whitelisted, this opens up the ability for the hot signers to steal funds from the system via high slippage and front and back running
+if a malicious protocol is whitelisted, this opens up the ability for hot signers to inadvernantly lose funds
+if a non-malicious but improperly configured protocol is whitelisted, this opens up the ability for hot signers to inadvernantly lose funds by using a protocol incorrectly
+fee on transfer tokens may make the actual amount of tokens sent to destinations less or more than expected, this finding is out of scope for the system
+the system only works on EVM compatible chains, does not work on chains that have not undergone the Shanghai EVM upgrade
+the system only works with contracts that have a known ABI, it does not work with contracts that have dynamic ABIs
+the return value of token transfers are unchecked, however the call to the token contract is checked, the timelock has no accounting mechanisms
+salt in the DeploymentParams struct is not used in the call to createSystemInstance, this is a known issue, but is not a security concern. The same system instance with the same parameters can only be deployed once.
+
+The whole of the docs contain known issues, so we don't want to be paying out for things we already know. https://github.com/solidity-labs-io/kleidi/blob/main/docs/KNOWN_ISSUES.md https://github.com/solidity-labs-io/kleidi/blob/main/docs/EDGECASES.md https://github.com/solidity-labs-io/kleidi/blob/main/docs/REQUIREMENTS.md 
+
+✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
+
+# Overview
+
+[ ⭐️ SPONSORS: add info here ]
+
+## Links
+
+- **Previous audits:**  https://github.com/solidity-labs-io/kleidi/blob/main/audit/Kleidi-Recon-Report.pdf
+  - ✅ SCOUTS: If there are multiple report links, please format them in a list.
+- **Documentation:** https://github.com/solidity-labs-io/kleidi/tree/main/docs
+- **Website:** 🐺 CA: add a link to the sponsor's website
+- **X/Twitter:** 🐺 CA: add a link to the sponsor's Twitter
+- **Discord:** 🐺 CA: add a link to the sponsor's Discord
+
+---
+
+# Scope
+
+[ ✅ SCOUTS: add scoping and technical details here ]
+
+### Files in scope
+- ✅ This should be completed using the `metrics.md` file
+- ✅ Last row of the table should be Total: SLOC
+- ✅ SCOUTS: Have the sponsor review and and confirm in text the details in the section titled "Scoping Q amp; A"
+
+*For sponsors that don't use the scoping tool: list all files in scope in the table below (along with hyperlinks) -- and feel free to add notes to emphasize areas of focus.*
+
+| Contract | SLOC | Purpose | Libraries used |  
+| ----------- | ----------- | ----------- | ----------- |
+| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+
+### Files out of scope
+✅ SCOUTS: List files/directories out of scope
+
+## Scoping Q &amp; A
+
+### General questions
+### Are there any ERC20's in scope?: Yes
+
+✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
+
+Any (all possible ERC20s)
 
 
+### Are there any ERC777's in scope?: Yes
+
+✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
+
+any
+
+### Are there any ERC721's in scope?: Yes
+
+✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
+
+Any
+
+### Are there any ERC1155's in scope?: Yes
+
+✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
+
+Any
+
+✅ SCOUTS: Once done populating the table below, please remove all the Q/A data above.
+
+| Question                                | Answer                       |
+| --------------------------------------- | ---------------------------- |
+| ERC20 used by the protocol              |       🖊️             |
+| Test coverage                           | ✅ SCOUTS: Please populate this after running the test coverage command                          |
+| ERC721 used  by the protocol            |            🖊️              |
+| ERC777 used by the protocol             |           🖊️                |
+| ERC1155 used by the protocol            |              🖊️            |
+| Chains the protocol will be deployed on | Arbitrum,Ethereum,Optimism,Base |
+
+### ERC20 token behaviors in scope
+
+| Question                                                                                                                                                   | Answer |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [Missing return values](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#missing-return-values)                                                      |   Out of scope  |
+| [Fee on transfer](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#fee-on-transfer)                                                                  |  Out of scope  |
+| [Balance changes outside of transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#balance-modifications-outside-of-transfers-rebasingairdrops) | Out of scope    |
+| [Upgradeability](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#upgradable-tokens)                                                                 |   Out of scope  |
+| [Flash minting](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#flash-mintable-tokens)                                                              | Out of scope    |
+| [Pausability](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#pausable-tokens)                                                                      | Out of scope    |
+| [Approval race protections](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#approval-race-protections)                                              | Out of scope    |
+| [Revert on approval to zero address](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-approval-to-zero-address)                            | Out of scope    |
+| [Revert on zero value approvals](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-approvals)                                    | Out of scope    |
+| [Revert on zero value transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-transfers)                                    | Out of scope    |
+| [Revert on transfer to the zero address](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-transfer-to-the-zero-address)                    | Out of scope    |
+| [Revert on large approvals and/or transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-large-approvals--transfers)                  | Out of scope    |
+| [Doesn't revert on failure](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#no-revert-on-failure)                                                   |  Out of scope   |
+| [Multiple token addresses](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-transfers)                                          | Out of scope    |
+| [Low decimals ( < 6)](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#low-decimals)                                                                 |   Out of scope  |
+| [High decimals ( > 18)](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#high-decimals)                                                              | Out of scope    |
+| [Blocklists](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#tokens-with-blocklists)                                                                | Out of scope    |
+
+### External integrations (e.g., Uniswap) behavior in scope:
+
+
+| Question                                                  | Answer |
+| --------------------------------------------------------- | ------ |
+| Enabling/disabling fees (e.g. Blur disables/enables fees) | No   |
+| Pausability (e.g. Uniswap pool gets paused)               |  No   |
+| Upgradeability (e.g. Uniswap gets upgraded)               |   No  |
+
+
+### EIP compliance checklist
+N/A
+
+✅ SCOUTS: Please format the response above 👆 using the template below👇
+
+| Question                                | Answer                       |
+| --------------------------------------- | ---------------------------- |
+| src/Token.sol                           | ERC20, ERC721                |
+| src/NFT.sol                             | ERC721                       |
+
+
+# Additional context
+
+## Main invariants
+
+all invariants are described here: https://github.com/solidity-labs-io/kleidi/blob/main/docs/INVARIANTS.md
+
+✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
+
+## Attack ideas (where to focus for bugs)
+There are no specific areas of concern, rather we want to make sure that all system components work together. We have already done a lot of testing around this, but we always want more eyes on things.
+
+✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
+
+## All trusted roles in the protocol
+
+Cold signers, hot signers
+
+✅ SCOUTS: Please format the response above 👆 using the template below👇
+
+| Role                                | Description                       |
+| --------------------------------------- | ---------------------------- |
+| Owner                          | Has superpowers                |
+| Administrator                             | Can change fees                       |
+
+## Describe any novel or unique curve logic or mathematical models implemented in the contracts:
+
+N/A
+
+✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
+
+## Running tests
+
+Build
+
+forge build
+
+Test
+
+forge test -vvv
+
+Testing
+
+Unit Testing
+
+forge test --mc UnitTest -vvv
+
+Integration Testing
+
+forge test --mc IntegrationTest -vvv --fork-url $ETH_RPC_URL --fork-block-number 20515328
+
+Coverage
+
+Unit Test Coverage
+
+forge coverage --mc UnitTest --report lcov
+
+Unit & Integration Test Coverage
+
+forge coverage --report summary --report lcov --fork-url $ETH_RPC_URL --fork-block-number 20515328
+
+
+✅ SCOUTS: Please format the response above 👆 using the template below👇
+
+```bash
+git clone https://github.com/code-423n4/2023-08-arbitrum
+git submodule update --init --recursive
+cd governance
+foundryup
+make install
+make build
+make sc-election-test
+```
+To run code coverage
+```bash
+make coverage
+```
+To run gas benchmarks
+```bash
+make gas
+```
+
+✅ SCOUTS: Add a screenshot of your terminal showing the gas report
+✅ SCOUTS: Add a screenshot of your terminal showing the test coverage
 
 
 
@@ -219,4 +433,10 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 | ./test/utils/SystemIntegrationFixture.sol |
 | ./test/utils/TimelockUnitFixture.sol |
 | Totals: 116 |
+
+## Miscellaneous
+Employees of Kleidi and employees' family members are ineligible to participate in this audit.
+
+Code4rena's rules cannot be overridden by the contents of this README. In case of doubt, please check with C4 staff.
+
 
