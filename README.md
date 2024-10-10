@@ -151,61 +151,53 @@ N/A
 
 
 ## Running tests
+- Clone the repo;
+```bash
+git clone --recurse https://github.com/code-423n4/2024-10-kleidi.git
+cd 2024-10-kleidi
+```
+- Before running the tests, make sure your `ETH_RPC_URL`is set.
+For `bash/zsh`;
+```bash
+export ETH_RPC_URL="https://mainnet.infura.io/v3/YOUR_PROJECT_ID"
+```
 
-Build
-
+- Build;
+```bash
+foundryup      
 forge build
+``` 
 
-Test
-
+- Test;
+```bash
 forge test -vvv
+```
 
-Testing
-
-Unit Testing
-
+- Unit Testing;
+```bash    
 forge test --mc UnitTest -vvv
+```
 
-Integration Testing
-
+- Integration Testing;
+```bash
 forge test --mc IntegrationTest -vvv --fork-url $ETH_RPC_URL --fork-block-number 20515328
-
-Coverage
-
-Unit Test Coverage
-
+```
+- Unit Test Coverage;
+```bash
 forge coverage --mc UnitTest --report lcov
-
-Unit & Integration Test Coverage
-
+```
+- Coverage;
+```bash
+forge coverage
+```
+- Unit & Integration Test Coverage;
+```bash
 forge coverage --report summary --report lcov --fork-url $ETH_RPC_URL --fork-block-number 20515328
-
-
-✅ SCOUTS: Please format the response above 👆 using the template below👇
-
-```bash
-git clone https://github.com/code-423n4/2023-08-arbitrum
-git submodule update --init --recursive
-cd governance
-foundryup
-make install
-make build
-make sc-election-test
 ```
-To run code coverage
+- To run gas benchmarks;
 ```bash
-make coverage
+forge test --gas-report
 ```
-To run gas benchmarks
-```bash
-make gas
-```
-
-✅ SCOUTS: Add a screenshot of your terminal showing the gas report
-✅ SCOUTS: Add a screenshot of your terminal showing the test coverage
-
-
-
 
 ## Miscellaneous
 Employees of Kleidi and employees' family members are ineligible to participate in this audit.
