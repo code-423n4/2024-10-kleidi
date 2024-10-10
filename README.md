@@ -57,8 +57,8 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
   - Validator awards: $2,600 in USDC
   - Scout awards: $500 in USDC
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts October 14, 2024 20:00 UTC
-- Ends October 24, 2024 20:00 UTC
+- Starts October 15, 2024 20:00 UTC
+- Ends October 25, 2024 20:00 UTC
 
 ## Automated Findings / Publicly Known Issues
 
