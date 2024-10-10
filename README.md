@@ -67,8 +67,6 @@ The 4naly3er report can be found [here](https://github.com/code-423n4/2024-10-kl
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
 
-## 🐺 C4 team: paste this into the bottom of the sponsor's audit repo `README`, then delete this line
-
 The following are known issues with the Kleidi system:
 
 if the cold signers are malicious or compromised, they can execute transactions to compromise the system if neither recovery spells or the guardian are used
