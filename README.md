@@ -85,7 +85,7 @@ The whole of the docs contain known issues, so we don't want to be rewarding for
 | Question                                | Answer                       |
 | --------------------------------------- | ---------------------------- |
 | ERC20 used by the protocol              |       Any (all possible ERC20s)             |
-| Test coverage                           | ✅ SCOUTS: Please populate this after running the test coverage command                          |
+| Test coverage                           | Integration tests: 93.27%  - Unit Tests: 84.62%                      |
 | ERC721 used  by the protocol            |           Any              |
 | ERC777 used by the protocol             |          Any                |
 | ERC1155 used by the protocol            |              Any            |
@@ -186,6 +186,54 @@ forge coverage --mc UnitTest --report lcov
 ```bash
 forge coverage --report summary --report lcov --fork-url $ETH_RPC_URL --fork-block-number 20515328
 ```
+### Integration Tests Coverage
+| File                                    | % Lines           | % Statements      | % Branches       | % Funcs         |
+|-----------------------------------------|-------------------|-------------------|------------------|-----------------|
+| src/BytesHelper.sol                     | 100.00% (13/13)   | 100.00% (18/18)   | 100.00% (10/10)  | 100.00% (4/4)   |
+| src/ConfigurablePause.sol               | 100.00% (18/18)   | 100.00% (20/20)   | 100.00% (6/6)    | 100.00% (6/6)   |
+| src/Guard.sol                           | 100.00% (3/3)     | 100.00% (3/3)     | 100.00% (5/5)    | 100.00% (2/2)   |
+| src/InstanceDeployer.sol                | 100.00% (50/50)   | 100.00% (63/63)   | 66.67% (10/15)   | 100.00% (2/2)   |
+| src/RecoverySpell.sol                   | 100.00% (42/42)   | 100.00% (58/58)   | 100.00% (13/13)  | 100.00% (4/4)   |
+| src/RecoverySpellFactory.sol            | 100.00% (21/21)   | 100.00% (31/31)   | 100.00% (17/17)  | 100.00% (3/3)   |
+| src/Timelock.sol                        | 100.00% (215/215) | 100.00% (274/274) | 92.62% (113/122) | 100.00% (49/49) |
+| src/TimelockFactory.sol                 | 100.00% (3/3)     | 100.00% (3/3)     | 100.00% (0/0)    | 100.00% (2/2)   |
+| src/deploy/SystemDeploy.s.sol           | 78.95% (30/38)    | 80.00% (36/45)    | 100.00% (6/6)    | 0.00% (0/5)     |
+| src/views/AddressCalculation.sol        | 100.00% (23/23)   | 100.00% (28/28)   | 100.00% (6/6)    | 100.00% (3/3)   |
+| test/mock/MockERC1155.sol               | 100.00% (2/2)     | 100.00% (2/2)     | 100.00% (0/0)    | 100.00% (2/2)   |
+| test/mock/MockERC721.sol                | 100.00% (2/2)     | 100.00% (2/2)     | 100.00% (0/0)    | 100.00% (2/2)   |
+| test/mock/MockLending.sol               | 100.00% (2/2)     | 100.00% (2/2)     | 100.00% (0/0)    | 100.00% (2/2)   |
+| test/mock/MockReentrancyExecutor.sol    | 100.00% (1/1)     | 100.00% (1/1)     | 100.00% (0/0)    | 100.00% (1/1)   |
+| test/mock/MockSafe.sol                  | 40.00% (4/10)     | 30.77% (4/13)     | 0.00% (0/3)      | 66.67% (4/6)    |
+| test/utils/CallHelper.t.sol             | 100.00% (33/33)   | 100.00% (42/42)   | 100.00% (0/0)    | 100.00% (6/6)   |
+| test/utils/SigHelper.sol                | 100.00% (3/3)     | 100.00% (6/6)     | 100.00% (0/0)    | 100.00% (2/2)   |
+| test/utils/SystemIntegrationFixture.sol | 100.00% (56/56)   | 100.00% (60/60)   | 100.00% (0/0)    | 100.00% (2/2)   |
+| test/utils/TimelockUnitFixture.sol      | 100.00% (8/8)     | 100.00% (8/8)     | 100.00% (0/0)    | 100.00% (1/1)   |
+| Total                                   | 97.42% (529/543)  | 97.35% (661/679)  | 91.63% (186/203) | 93.27% (97/104) |
+
+### Unit Test Coverage
+
+| File                                    | % Lines           | % Statements      | % Branches       | % Funcs         |
+|-----------------------------------------|-------------------|-------------------|------------------|-----------------|
+| src/BytesHelper.sol                     | 92.31% (12/13)    | 94.44% (17/18)    | 90.00% (9/10)    | 100.00% (4/4)   |
+| src/ConfigurablePause.sol               | 100.00% (18/18)   | 100.00% (20/20)   | 100.00% (6/6)    | 100.00% (6/6)   |
+| src/Guard.sol                           | 100.00% (3/3)     | 100.00% (3/3)     | 100.00% (5/5)    | 100.00% (2/2)   |
+| src/InstanceDeployer.sol                | 0.00% (0/50)      | 0.00% (0/63)      | 0.00% (0/15)     | 0.00% (0/2)     |
+| src/RecoverySpell.sol                   | 100.00% (42/42)   | 100.00% (58/58)   | 100.00% (13/13)  | 100.00% (4/4)   |
+| src/RecoverySpellFactory.sol            | 100.00% (21/21)   | 100.00% (31/31)   | 100.00% (17/17)  | 100.00% (3/3)   |
+| src/Timelock.sol                        | 100.00% (215/215) | 100.00% (274/274) | 92.62% (113/122) | 100.00% (49/49) |
+| src/TimelockFactory.sol                 | 100.00% (3/3)     | 100.00% (3/3)     | 100.00% (0/0)    | 100.00% (2/2)   |
+| src/deploy/SystemDeploy.s.sol           | 0.00% (0/38)      | 0.00% (0/45)      | 0.00% (0/6)      | 0.00% (0/5)     |
+| src/views/AddressCalculation.sol        | 0.00% (0/23)      | 0.00% (0/28)      | 0.00% (0/6)      | 0.00% (0/3)     |
+| test/mock/MockERC1155.sol               | 100.00% (2/2)     | 100.00% (2/2)     | 100.00% (0/0)    | 100.00% (2/2)   |
+| test/mock/MockERC721.sol                | 100.00% (2/2)     | 100.00% (2/2)     | 100.00% (0/0)    | 100.00% (2/2)   |
+| test/mock/MockLending.sol               | 100.00% (2/2)     | 100.00% (2/2)     | 100.00% (0/0)    | 100.00% (2/2)   |
+| test/mock/MockReentrancyExecutor.sol    | 100.00% (1/1)     | 100.00% (1/1)     | 100.00% (0/0)    | 100.00% (1/1)   |
+| test/mock/MockSafe.sol                  | 40.00% (4/10)     | 30.77% (4/13)     | 0.00% (0/3)      | 66.67% (4/6)    |
+| test/utils/CallHelper.t.sol             | 100.00% (33/33)   | 100.00% (42/42)   | 100.00% (0/0)    | 100.00% (6/6)   |
+| test/utils/SigHelper.sol                | 0.00% (0/3)       | 0.00% (0/6)       | 100.00% (0/0)    | 0.00% (0/2)     |
+| test/utils/SystemIntegrationFixture.sol | 0.00% (0/56)      | 0.00% (0/60)      | 100.00% (0/0)    | 0.00% (0/2)     |
+| test/utils/TimelockUnitFixture.sol      | 100.00% (8/8)     | 100.00% (8/8)     | 100.00% (0/0)    | 100.00% (1/1)   |
+| Total                                   | 67.40% (366/543)  | 68.78% (467/679)  | 80.30% (163/203) | 84.62% (88/104) |
 
 
 ## Miscellaneous
