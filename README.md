@@ -156,7 +156,8 @@ N/A
 git clone --recurse https://github.com/code-423n4/2024-10-kleidi.git
 cd 2024-10-kleidi
 ```
-- Before running the tests, make sure your `ETH_RPC_URL`is set.
+- Before running the tests, make sure your `ETH_RPC_URL`is set. The integration tests will not work locally, so you will need to test unit tests in your local.
+
 For `bash/zsh`;
 ```bash
 export ETH_RPC_URL="https://mainnet.infura.io/v3/YOUR_PROJECT_ID"
@@ -167,11 +168,6 @@ export ETH_RPC_URL="https://mainnet.infura.io/v3/YOUR_PROJECT_ID"
 foundryup      
 forge build
 ``` 
-
-- Test;
-```bash
-forge test -vvv
-```
 
 - Unit Testing;
 ```bash    
