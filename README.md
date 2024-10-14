@@ -186,10 +186,7 @@ forge coverage --mc UnitTest --report lcov
 ```bash
 forge coverage --report summary --report lcov --fork-url $ETH_RPC_URL --fork-block-number 20515328
 ```
-- To run gas benchmarks;
-```bash
-forge test --gas-report
-```
+
 
 ## Miscellaneous
 Employees of Kleidi and employees' family members are ineligible to participate in this audit.
