@@ -1,0 +1,445 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-PUBLIC / kleidi-oct15
+==============================================================
+
+[10/10/2024 23:27] itsmetechjay (pinned)
+👋 Hello and welcome to the **$40,000 in USDC Kleidi** audit channel!
+
+📆 Audit opens Tuesday, 15 October 2024 20:00 (20:00 UTC) and runs through Friday, 25 October 2024 20:00 (20:00 UTC) (10 days).
+
+Please give a warm welcome to the Kleidi team, particularly @elliot and @prat.gp, who will be available for questions either here in the channel or via a PRIVATE thread in the CET timezone(s).
+
+🤖 **Documentation bot assistance:** For general questions about the codebase, give our documentation bot a try after the audit has launched, by tagging `@Docs Wolf` in any thread (private or public) and asking your question. The bot will make its best attempt to answer based on the codebase and documentation, and link you to relevant resources.  
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+
+Audit Page: https://code4rena.com/audits/2024-10-kleidi
+
+{Reactions}
+🔑 (2) 
+
+[10/10/2024 23:28] itsmetechjay
+Pinned a message.
+
+
+[10/11/2024 17:37] alextheentreprenerd (pinned)
+I was the previous reviewer for the codebase
+With approval from @elliot, here are all my notes from the review:
+https://github.com/GalloDaSballo/kleidi-notes
+
+{Reactions}
+🔥 (15) 
+
+[10/11/2024 18:22] 0xsorrynotsorry
+Pinned a message.
+
+{Reactions}
+thankyou (2) 
+
+[10/15/2024 05:23] realfakepicnic
+gm @🐺Wardens! Don't forget, Kleidi is doing a live code-walkthrough Tuesday, 15 October 2024 16:30 for this competitive audit. You won't want to miss it! https://discord.gg/5j4Que4w?event=1294433855788548238
+
+{Reactions}
+👍 (4) 
+
+[10/15/2024 14:48] realfakepicnic
+@🐺Wardens Reminder: The Kleidi code walk-through is coming up fast. See you there! https://discord.gg/5j4Que4w?event=1294433855788548238
+
+
+[10/16/2024 02:33] recursiveeth_70175
+Hey @elliot is the walkthrough session recorded, can we get the link?
+
+
+[10/16/2024 03:29] realfakepicnic
+Our video editor just finished editing, and we're getting it uploaded. Will share when it's ready!
+
+{Reactions}
+👍 
+
+[10/16/2024 04:13] .0xsecuri
+Hey @🧺 picnic will this contest include rolling triage, or not?
+
+
+[10/16/2024 04:25] realfakepicnic
+Nope, the details are in the audit docs: https://code4rena.com/audits/2024-10-kleidi
+
+{Reactions}
+👍 (2) 
+
+[10/16/2024 09:15] y0ng0p3
+Is the record of the code walk-through ready yet? I dont see it on the C4 YouTube channel.
+
+{Reactions}
+same (4) 
+
+[10/16/2024 10:52] .0xsecuri
+The section about ERC20s is confusing. What should we consider in scope for this audit? The sponsors mentioned 'any (all possible ERC20s)' for the 'ERC20 used by the protocol,' but below that, many ERC20s are listed as out of scope. I assume we should focus on the 'standard' ERC20 tokens and skip the 'weird' ones, but as a suggestion for next time, it would be helpful to make the scope clearer and more concrete.
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - kleidi-oct15 [1293508109402247179].txt_Files/Screenshot_2024-10-16_at_13.48.22-A0D40.png
+
+{Reactions}
+this 
+
+[10/16/2024 18:56] realfakepicnic
+Hey @🐺Wardens, here's the recording of yesterday's live code walk-through. Enjoy! https://youtu.be/uWtMPrY77_0
+
+{Embed}
+Code4rena
+https://www.youtube.com/watch?v=uWtMPrY77_0
+Kleidi Code Walk-Through
+Learn about the Kleidi codebase and what to focus on during the $40,000 competitive audit on Code4rena, October 15th - 25th.
+Code4rena - ARCHIVE-PUBLIC - kleidi-oct15 [1293508109402247179].txt_Files/maxresdefault-458DC.jpg
+
+{Reactions}
+🫡 (8) 🧑‍🔬 (2) hi5 (2) code4rena (3) ❤️ (2) 👁️ (2) 
+
+[10/17/2024 10:17] pro_king1
+Is it so safe or my skills are weak yet?
+
+{Reactions}
+😢 
+
+[10/17/2024 10:36] 0x46_dustin_22270
+i think so safe, you are strong🫡
+
+{Reactions}
+👍 
+
+[10/17/2024 10:50] _3doc_
+a good part of the blame goes to @Alex The Entreprenerd's 💪
+
+{Reactions}
+💯 (10) 👑 (8) 
+
+[10/17/2024 16:18] elliot0x
+I'll take some blame too
+
+{Reactions}
+👑 (12) 😎 (6) 
+
+[10/19/2024 02:09] naties29
+Yeah damn lol this one is locked up tight.
+
+{Reactions}
+🔐 
+
+[10/19/2024 10:36] .boy2000
+- Is there a security reason for not allowing overlapping checks? Or is it just a design choice?
+- How one checks param 1 AND 3 at the same time?
+- Can you please clarify those two statements, are they talking about different delays? 
+
+`This is why it is important to have a longer time delay on the recovery spells than on the timelock.`
+
+`it is of critical importance that the delay is shorter than the timelock delay`
+
+
+[10/20/2024 07:56] .anas_22
+Hi 👋
+
+
+[10/20/2024 13:41] lavizrap_
+Started a thread.
+
+
+[10/21/2024 03:42] drynooo
+Are there currently only examples of Morpho? Are there any more examples? moonwell，aave？
+
+
+[10/21/2024 09:58] lavizrap_
+are the sponsors replying to anyone?
+
+
+[10/21/2024 18:45] kartoonjoy
+Looks like they responded to you earlier in the day. Please keep in mind that the sponsor is in the CET timezone.
+
+{Reactions}
+👍 
+
+[10/23/2024 11:22] bitdoctor0524
+@elliot @prat.gp  Would you like to explain the reason of the following process for recovery spell.
+        ///   1). remove all but final existing owner, set owner threshold to 1
+        ///   2). swap final existing owner for the first new owner
+        ///   3). add the remaining new owners to the safe, with the
+        ///   last owner being added updating the threshold to the new value
+        ///   4). remove the recovery module from the safe
+Especially, what's the purpose of step 2?
+
+
+[10/23/2024 11:26] .boy2000
+safe does not allow removing all owners(threshold must be >= 1). so one of them needs to swapped with another.
+
+{Reactions}
+👍 
+
+[10/24/2024 07:06] pro_king1
+The first three questions are the same as I have.
+
+
+[10/25/2024 10:53] justawanderkid
+Just a unnecessary additional logic, it's just how dev wanted to implement it this way.
+
+@Apollo @pro_king
+
+{Reactions}
+👍 (2) 
+
+[10/25/2024 18:35] .0xsecuri
+Very solid codebase, very interesting idea, very professional dev team. Definitely learned a lot and really enjoyed the audit. Thanks to the Kleidi team and Code4rena for the opportunity! Can't wait to see the results.
+
+{Reactions}
+🎉 (2) 
+
+[10/25/2024 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺Wardens The **Kleidi** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks.
+
+
+[10/25/2024 20:12] elliot0x
+Thank you for all of your submissions and to all of the wardens for their time! Looking forward to seeing what gets turned up!
+
+{Reactions}
+✅ (5) 🙏 (3) 
+
+[10/26/2024 06:43] lavizrap_
+yes very solid indeed. Alex also reported a bunch of QAs in their previous codebase. I wonder if auditors found legit vulnerabilities in the current codebase.
+
+
+[10/26/2024 07:35] tigerfrake
+There's is always something. Maybe an extra QA 😂
+
+{Reactions}
+😂 (2) 
+
+[10/26/2024 08:22] .0xsecuri
+Time will show 😄
+
+{Reactions}
+👀 
+
+[10/26/2024 11:22] mo1055
+im interested in the findings, it would be a learning curve. had an headache trying to find bugs 😅
+
+
+[10/26/2024 12:31] lavizrap_
+me too!! but I felt relieved after reading alex's report. Even he agreed that the codebase is solid.
+
+
+[10/26/2024 15:45] 0xf40
+Hello, noob question here. I cannot see my issue now, I guess it is ok, and it will be visible when judging is done and over?
+
+
+[10/26/2024 16:58] .0xsecuri
+Yes, if you don't have SR(formerly backstage role)  you cannot see your findings until, results are announced
+
+
+[10/26/2024 17:02] 0xf40
+Ok. Thank you
+
+{Reactions}
+👍 
+
+[10/26/2024 17:14] .0xsecuri
+btw, every day of this contest, this pic kept popping into my mind  😄
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - kleidi-oct15 [1293508109402247179].txt_Files/Your_paragraph_text_1-EA3C4.png
+
+{Reactions}
+😅 (13) 💯 (5) 👏 (2) 😂 (5) 😩 (2) 
+
+[11/05/2024 10:12] .gauravu
+hey , when can we expect results for this contest?
+
+
+[11/05/2024 16:34] gesha17.
+Right now its PJQA
+
+
+[11/08/2024 10:00] .0xsecuri
+Is there any chance the results could be released by the end of today?
+
+
+[11/10/2024 12:44] sakibcy
+When the result will release??
+Do anyone know??
+
+{Reactions}
+👎 (2) 
+
+[11/10/2024 18:38] .gauravu
+no
+
+
+[11/13/2024 21:36] thebrittfactor
+🤑 🎉  Awards for **Kleidi**:
+
+$13,298.29 USDC » @KlosMitSoss 
+$11,361.46 USDC » @dhank 
+$1,141.87 USDC » @Allarious 
+$969.10 USDC » @DemoreX 
+$625.26 USDC » @0xAkira 
+$575.90 USDC » @Drynooo 
+$575.90 USDC » @Japy69 
+$575.90 USDC » @gesha17 
+$511.15 USDC » 0xAlix2 (@a_kalout and @ali_shehab) 
+$431.93 USDC » @Brene 
+$431.93 USDC » tenge_club (@typicalHuman and @ABAIKUNANBAEV) 
+$393.19 USDC » @0x37 
+$393.19 USDC » @DanielArmstrong 
+$393.19 USDC » @jsonDoge 
+$393.19 USDC » @klau5 
+$393.19 USDC » @0xStuart 
+$347.37 USDC » @Sathish9098 
+$287.95 USDC » @justAWanderKid 
+
+🏁 Findings summary
+--------------------------------------
+0 High risk findings
+3 Med risk findings
+72 wardens contributed
+
+Top Hunter: KlosMitSoss and dhank
+Top Gatherer: KlosMitSoss
+Top QA report: 0xAkira
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+⚠️ Awardees, be sure to review [this announcement](https://discord.com/channels/810916927919620096/810929015509483554/1272625452909072415) and fill in your tax info if you haven't already. This must be completed within 30 days (i.e. before Friday, 13 December 2024) to receive your award distribution for this audit.
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🎉 (5) chefskiss (4) 🙌 (3) 🔥 (2) 
+
+[11/14/2024 11:21] gesha17.
+I didn't get a response on my PJQA comments
+
+
+[11/14/2024 11:22] gesha17.
+@thebrittfactor | C4 is this normal? Did the judge miss them?
+
+
+[11/14/2024 13:35] justawanderkid
+Where can i read findings?
+
+
+[11/15/2024 15:45] gesha17.
+@Jay | C4 Hi, can you take a look please? I just saw thebrittfactor is away..
+
+
+[11/15/2024 20:24] itsmetechjay
+Started a thread.
+
+
+[11/20/2024 17:10] oxtenma
+@Allarious is back after around 1 year.🫡
+
+{Reactions}
+❤️ (2) 
+
+[11/21/2024 01:16] .boy2000
+Probably here:
+
+<https://github.com/solidity-labs-io/kleidi/pull/51>
+<https://github.com/solidity-labs-io/kleidi/pull/52>
+<https://github.com/solidity-labs-io/kleidi/pull/53>
+
+
+[11/21/2024 03:28] justawanderkid
+Thanks
+
+
+[11/21/2024 16:51] .boy2000
+Can someone clarify why <https://github.com/code-423n4/2024-10-kleidi-validation/issues/81> is invalid. It seems validator did not understand the issue. This C4 system is really something.
+
+Issue was rejected with `no security concern as there could be another schedule with different salt anyway`, while salts have nothing to do with the issue. `timestamps[id] = block.timestamp + delay;` so even if delay is 0, this will still always revert during `execute`.
+
+
+[11/21/2024 17:51] 0xsorrynotsorry
+Hey @Boy2000 ,
+
+I was the validator for this contest and I'm sorry for your experience.
+
+To add, yes, salt does not effect this, I should have commented as this was an inflated submission with delay being configured to uint256.max as well as the mitigation suggests that delay upper bound should be 1000 years without holding any logic.
+
+
+[11/21/2024 17:54] 0xsorrynotsorry
+To sum up, the submission could have been better suited in a QA report but it didn't hold the bar to be an audit report.
+
+
+[11/21/2024 18:13] .boy2000
+Appreciate the comment. I don't agree it's inflated (contract should never end in a state where it will always revert). Alright, peace.
+
+
+[11/21/2024 18:14] 0xsorrynotsorry
+Thank you for taking it positively.
+Please free to DM anytime that I could be use of providing hints after validating 10k+ issues 🤝
+
+{Reactions}
+💜 
+
+[11/22/2024 10:28] 0xf40
+Hello. Can I have a clarification why https://github.com/code-423n4/2024-10-kleidi-validation/issues/196 is not valid?
+
+
+[11/22/2024 13:42] .boy2000
+Seems sponsor disputes <https://github.com/code-423n4/2024-10-kleidi-findings/issues/18>
+
+
+[11/22/2024 17:58] 0xf40
+“.. the new owner shouldn't be the safe itself” it is not the same problem as 196
+
+
+[11/22/2024 18:10] 0xf40
+196 and 205 (https://github.com/code-423n4/2024-10-kleidi-validation/issues/205)  are duplicates. The problem is reusing address in owner list, which can DoS the contract, not setting the safe itself as owner.
+
+
+[11/22/2024 18:30] justawanderkid
+Just move on. Contest has ended.
+
+
+[11/22/2024 18:58] 0xf40
+I got it, but I want to know why it is not valid.
+
+
+[11/28/2024 11:59] typicalhuman
+@Jay | C4 , hey! I just wanted to ask if the rewards have already been sent, because my teammate and I haven't received anything yet, even though both of us have our tax information approved and it’s been more than a week since the announcement
+
+{Reactions}
+👍 🧵 
+
+[11/28/2024 16:35] justawanderkid
+same, so probably rewards are not distributed yet.
+
+{Reactions}
+👍🏻 🧵 
+
+[12/02/2024 22:17] itsmetechjay
+Started a thread.
+
+
+[12/02/2024 22:18] itsmetechjay
+Started a thread.
+
+
+[12/05/2024 23:09] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted 12/13/2024 23:08. Please make sure to grab anything you might need before then.
+
+
+[12/07/2024 03:11] shealtielanz
+❤️✨
+
+
+[12/12/2024 18:22] itsmetechjay
+ℹ️ Reminder: this channel will be deleted after 24 hours.
+
+
+==============================================================
+Exported 72 message(s)
+==============================================================
